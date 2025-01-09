@@ -169,6 +169,15 @@
   font-weight: bold;
 }
 
+.logo {
+  width: 70px;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .charts-grid {
       grid-template-columns: 1fr;
