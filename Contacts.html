@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez-nous</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="./assets/index.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/index.js" defer></script>
+</head>
+
+<style>
+  #contact {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+  .contact-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .name-fields {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .name-fields .form-group {
+    flex: 1;
+  }
+
+  @media (max-width: 480px) {
+    .name-fields {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+</style>
+
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader__spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+    <div class="container mx-auto px-6 py-5">
+      <div class="flex items-center justify-between">
+        <div class="text-2xl font-bold text-blue-900">Cyber Secu Solution</div>
+        <div class="flex md:flex space-x-8">
+          <a href="index.html" class="nav-link">Accueil</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-container">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-8 section-title">Contactez-nous</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="name-fields">
+          <div class="form-group">
+            <input type="text" id="firstname" required>
+            <label>Prénom</label>
+            <div class="line"></div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="lastname" required>
+            <label>Nom</label>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="company" required>
+          <label>Nom de l'entreprise</label>
+          <div class="line"></div>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" required>
+          <label>Email</label>
+          <div class="line"></div>
+        </div>
+        <div class="form-group">
+          <textarea id="message" required></textarea>
+          <label>Message</label>
+          <div class="line"></div>
+        </div>
+        <button type="submit" class="submit-button w-full">
+          <span>Envoyer</span>
+          <div class="liquid"></div>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="text-center">
+        <div class="text-2xl font-bold mb-4">CyberSecuSolution</div>
+        <p class="text-gray-400">Protection • Expertise • Innovation</p>
+        <div class="mt-8 text-sm text-gray-400">
+          © 2025 CyberSecuSolution Solutions. Tous droits réservés.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

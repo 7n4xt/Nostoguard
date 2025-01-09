@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <title>Formation de Sensibilisation - CyberSecure Solutions</title>
+    <link rel="stylesheet" href="./assets/index.css">
+    <link rel="stylesheet" href="./assets/formation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader__spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-900">Cyber Secu Solution</div>
+                <div class="flex md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="Contacts.html" class="nav-link">Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="awareness-hero">
+        <div class="cyber-sphere"></div>
+        <div class="hero-content">
+            <h1 class="glowing-text">Formation de Sensibilisation à la Cybersécurité</h1>
+            <p class="hero-subtitle">Protégez votre entreprise en formant vos équipes</p>
+            <button class="cyber-button">
+                Commencer la formation
+                <span class="cyber-button__glitch"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Brief Description -->
+    <section class="awareness-section">
+        <div class="brief-description fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Pourquoi la sensibilisation est importante
+            </h2>
+            <p>La sensibilisation à la cybersécurité est essentielle pour protéger les données sensibles et prévenir les
+                erreurs humaines, qui sont souvent à l'origine des incidents de sécurité. Former les employés à
+                reconnaître les menaces comme le phishing, les attaques par ransomware ou les erreurs de configuration
+                permet de réduire les risques de violations de données et de fuites d'informations.
+
+                Elle favorise également une culture de sécurité au sein de l'entreprise, où chaque individu devient
+                acteur de la protection des systèmes. En outre, la sensibilisation aide à respecter les réglementations
+                en matière de sécurité et à limiter les conséquences financières et réputationnelles d’une attaque, en
+                contribuant à une meilleure gestion des risques.</p>
+        </div>
+
+        <!-- Statistics Charts -->
+        <div class="stats-container">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 mt-30 section-title">Statistiques et Analyses
+            </h2>
+
+            <div class="charts-grid">
+                <!-- Attack Success Rate -->
+                <div class="chart-wrapper fade-in">
+                    <h3>Taux de Réussite des Attaques</h3>
+                    <canvas id="attackChart"></canvas>
+                </div>
+
+                <!-- Types of Attacks -->
+                <div class="chart-wrapper fade-in">
+                    <h3>Types d'Attaques Courantes</h3>
+                    <canvas id="attackTypesChart"></canvas>
+                </div>
+
+                <!-- Updated Training Impact Chart to Cost of Cyberattack -->
+                <div class="chart-wrapper fade-in">
+                    <h3>Coût d'une cyberattaque</h3>
+                    <canvas id="costChart"></canvas>
+                </div>
+
+                <!-- Risk Awareness -->
+                <div class="chart-wrapper fade-in">
+                    <h3>Niveau de Sensibilisation</h3>
+                    <canvas id="awarenessChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Section -->
+        <div class="process-grid">
+            <div class="process-card fade-in">
+                <h3>Notre Approche de Sensibilisation</h3>
+                <ul>
+                    <li>Évaluation initiale des connaissances</li>
+                    <li>Formation interactive personnalisée</li>
+                </ul>
+            </div>
+
+            <div class="process-card fade-in">
+                <h3>Évaluation des Résultats</h3>
+                <ul>
+                    <li>Tests pratiques</li>
+                    <li>Questionnaires de validation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Conclusion Section -->
+    <section class="conclusion-section">
+        <div class="conclusion-text">
+            <h2 class="text-2xl font-bold section-title">Pour Conclure</h2>
+            <p>
+                Dans un monde où les cybermenaces se multiplient, se sensibiliser à la cybersécurité est essentiel pour
+                protéger ses données personnelles et professionnelles. Que ce soit contre le vol de données, les
+                ransomwares ou les attaques par phishing, adopter les bonnes pratiques permet de limiter les risques et
+                d'assurer la confidentialité et l'intégrité de vos informations. Une sensibilisation efficace aide
+                également à respecter les obligations légales, comme le RGPD, tout en préservant l'image et la
+                réputation d'une entreprise ou d'un individu. En comprenant les menaces et en sachant comment y faire
+                face, vous renforcez votre sécurité numérique et contribuez à un environnement digital plus sûr pour
+                tous. Se former, c'est prévenir : ne laissez pas les cybercriminels profiter d'une erreur évitable.
+                Adoptez dès maintenant une posture proactive face à la cybersécurité.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4">CyberSecuSolution</div>
+                <p class="text-gray-400">Protection • Expertise • Innovation</p>
+                <div class="mt-8 text-sm text-gray-400">
+                    © 2025 CyberSecuSolution Solutions. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Attack Success Rate Chart
+            const attackCtx = document.getElementById('attackChart').getContext('2d');
+            new Chart(attackCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Entreprises non sensibilisées', 'Entreprises sensibilisées'],
+                    datasets: [{
+                        label: 'Pourcentage d\'attaques réussies',
+                        data: [75, 25],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(75, 192, 192, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Attack Types Chart
+            const typesCtx = document.getElementById('attackTypesChart').getContext('2d');
+            new Chart(typesCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Phishing', 'Malware', 'Social Engineering', 'Password Attacks', 'DDoS'],
+                    datasets: [{
+                        data: [45, 20, 15, 12, 8],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(153, 102, 255, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+
+            // Update the Training Impact Chart to show Cost of Cyberattack
+            const costCtx = document.getElementById('costChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['TPE', 'PME', 'Grande Entreprise'],
+                    datasets: [{
+                        label: 'Coût moyen en milliers d\'euros',
+                        data: [50, 250, 1000],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 99, 132, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Coût en milliers d\'euros'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Awareness Level Chart
+            const awarenessCtx = document.getElementById('awarenessChart').getContext('2d');
+            new Chart(awarenessCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Identification des menaces',
+                        'Gestion des mots de passe',
+                        'Sécurité email',
+                        'Protection des données',
+                        'Réponse aux incidents'
+                    ],
+                    datasets: [{
+                        label: 'Avant formation',
+                        data: [30, 40, 35, 25, 20],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        pointBackgroundColor: 'rgba(255, 99, 132, 1)'
+                    }, {
+                        label: 'Après formation',
+                        data: [80, 85, 90, 85, 75],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
