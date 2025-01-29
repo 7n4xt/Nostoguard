@@ -202,7 +202,7 @@ function showResults() {
     document.getElementById('final-score').textContent = score;
     const feedback = document.getElementById('final-feedback');
 
-    if (score < 3) {
+    if (score < 6) {
         feedback.textContent = "Vous devriez envisager de suivre notre formation pour améliorer vos connaissances en cybersécurité.";
     } else {
         feedback.textContent = "Félicitations ! Vous avez une bonne compréhension des bases de la cybersécurité.";
