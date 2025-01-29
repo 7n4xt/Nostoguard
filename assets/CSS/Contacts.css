@@ -1,0 +1,36 @@
+#contact {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.name-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-fields .form-group {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .name-fields {
+    flex-direction: column;
+    gap: 0;
+  }
+}
