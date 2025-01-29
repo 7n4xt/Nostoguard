@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
 .nav-link {
   position: relative;
   color: #333;
@@ -47,6 +57,23 @@
 
 .question-container {
   animation: fadeIn 0.5s ease-in;
+}
+
+/* Updated image container styles */
+.question-container .mb-8 {
+  height: 400px; /* Increased from default */
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+.question-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed to contain to preserve aspect ratio */
+  object-position: center;
 }
 
 @keyframes fadeIn {
