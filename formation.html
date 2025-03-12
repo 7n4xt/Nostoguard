@@ -149,6 +149,53 @@
     <script src="./assets/Javascript/index.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Global Chart.js configuration for light theme
+            Chart.defaults.color = 'rgba(255, 255, 255, 0.8)';
+            Chart.defaults.scale.grid.color = 'rgba(255, 255, 255, 0.1)';
+            Chart.defaults.scale.grid.borderColor = 'rgba(255, 255, 255, 0.1)';
+            Chart.defaults.scale.ticks.color = 'rgba(255, 255, 255, 0.8)';
+
+            // Update chart options to include white text
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false, /* Allow chart to fill container */
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 14 /* Increase font size */
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 12 /* Increase tick font size */
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 12 /* Increase tick font size */
+                            }
+                        }
+                    }
+                }
+            };
+
             // Attack Success Rate Chart
             const attackCtx = document.getElementById('attackChart').getContext('2d');
             new Chart(attackCtx, {
@@ -165,10 +212,11 @@
                     }]
                 },
                 options: {
-                    responsive: true,
+                    ...chartOptions,
                     scales: {
+                        ...chartOptions.scales,
                         y: {
-                            beginAtZero: true,
+                            ...chartOptions.scales.y,
                             max: 100
                         }
                     }
@@ -193,10 +241,14 @@
                     }]
                 },
                 options: {
-                    responsive: true,
+                    ...chartOptions,
                     plugins: {
+                        ...chartOptions.plugins,
                         legend: {
-                            position: 'right'
+                            position: 'right',
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
                         }
                     }
                 }
@@ -219,13 +271,15 @@
                     }]
                 },
                 options: {
-                    responsive: true,
+                    ...chartOptions,
                     scales: {
+                        ...chartOptions.scales,
                         y: {
-                            beginAtZero: true,
+                            ...chartOptions.scales.y,
                             title: {
                                 display: true,
-                                text: 'Coût en milliers d\'euros'
+                                text: 'Coût en milliers d\'euros',
+                                color: 'rgba(255, 255, 255, 0.8)'
                             }
                         }
                     }
@@ -259,11 +313,20 @@
                     }]
                 },
                 options: {
-                    responsive: true,
+                    ...chartOptions,
                     scales: {
                         r: {
                             beginAtZero: true,
-                            max: 100
+                            max: 100,
+                            pointLabels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
                         }
                     }
                 }
