@@ -66,36 +66,29 @@
         </div>
 
         <!-- Statistics Charts -->
-        <div class="stats-container">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 mt-30 section-title">Statistiques et Analyses
-            </h2>
-
-            <div class="charts-grid">
-                <!-- Attack Success Rate -->
-                <div class="chart-wrapper fade-in">
-                    <h3>Taux de Réussite des Attaques</h3>
-                    <canvas id="attackChart"></canvas>
-                </div>
-
-                <!-- Types of Attacks -->
-                <div class="chart-wrapper fade-in">
-                    <h3>Types d'Attaques Courantes</h3>
-                    <canvas id="attackTypesChart"></canvas>
-                </div>
-
-                <!-- Updated Training Impact Chart to Cost of Cyberattack -->
-                <div class="chart-wrapper fade-in">
-                    <h3>Coût d'une cyberattaque</h3>
-                    <canvas id="costChart"></canvas>
-                </div>
-
-                <!-- Risk Awareness -->
-                <div class="chart-wrapper fade-in">
-                    <h3>Niveau de Sensibilisation</h3>
-                    <canvas id="awarenessChart"></canvas>
+        <section class="dark-gradient-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Statistiques et Analyses</h2>
+                <div class="cards-grid">
+                    <div class="glass-card">
+                        <canvas id="attackChart"></canvas>
+                        <div class="glow-line"></div>
+                    </div>
+                    <div class="glass-card">
+                        <canvas id="attackTypesChart"></canvas>
+                        <div class="glow-line"></div>
+                    </div>
+                    <div class="glass-card">
+                        <canvas id="costChart"></canvas>
+                        <div class="glow-line"></div>
+                    </div>
+                    <div class="glass-card">
+                        <canvas id="awarenessChart"></canvas>
+                        <div class="glow-line"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Process Section -->
         <div class="process-grid">
@@ -133,7 +126,7 @@
                 Adoptez dès maintenant une posture proactive face à la cybersécurité.
             </p>
         </div>
-        <a href="quiz.html"> 
+        <a href="quiz.html">
             <button class="Quiz-btn"> Commencez un Quiz
             </button>
         </a>
