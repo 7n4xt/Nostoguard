@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - NOSTROGUARD</title>
+    <!-- CSS externe -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Notre CSS -->
+    <link href="./assets/CSS/index.css" rel="stylesheet">
+    <link href="./assets/CSS/tarif.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader__spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex items-center justify-between">
+                <div class="left-nav">
+                    <div class="text-2xl font-bold text-blue-900">NOSTROGUARD</div>
+                    <img class="logo" src="./assets/Images/NOSTROMOGAURD (1).png" alt="logo">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="formation.html" class="nav-link">Formation</a>
+                    <a href="Contacts.html" class="nav-link">Contactez-nous</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden">
+        <a href="index.html" class="mobile-link">Accueil</a>
+        <a href="formation.html" class="mobile-link">Formation</a>
+        <a href="Contacts.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Tarifs Section -->
+    <section class="pricing-section dark-gradient-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white mb-16 section-title">Nos Tarifs</h2>
+
+            <!-- Main Services Cards -->
+            <div class="cards-grid mb-16">
+                <div class="glass-card">
+                    <div class="price-card__header">
+                        <h3 class="text-2xl font-bold mb-4">Tests d'intrusion</h3>
+                        <div class="text-4xl font-bold text-accent mb-2">4 000€</div>
+                        <p class="text-gray-300">-20% par rapport à la moyenne du marché</p>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-gray-200">
+                        <li>✓ Analyse complète de l'infrastructure</li>
+                        <li>✓ Rapport détaillé des vulnérabilités</li>
+                        <li>✓ Recommandations personnalisées</li>
+                    </ul>
+                    <div class="glow-line"></div>
+                </div>
+
+                <div class="glass-card">
+                    <div class="price-card__header">
+                        <h3 class="text-2xl font-bold mb-4">Formation</h3>
+                        <div class="text-4xl font-bold text-accent mb-2">990€<span class="text-xl">/jour</span></div>
+                        <p class="text-gray-300">Prix attractif sous la barre des 1 000€</p>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-gray-200">
+                        <li>✓ Sessions interactives</li>
+                        <li>✓ Contenu personnalisé</li>
+                        <li>✓ Exercices pratiques</li>
+                    </ul>
+                    <div class="glow-line"></div>
+                </div>
+
+                <div class="glass-card">
+                    <div class="price-card__header">
+                        <h3 class="text-2xl font-bold mb-4">SOC as a Service</h3>
+                        <div class="text-4xl font-bold text-accent mb-2">1 990€<span class="text-xl">/mois</span></div>
+                        <p class="text-gray-300">Prix d'accroche sous les 2 000€</p>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-gray-200">
+                        <li>✓ Surveillance 24/7</li>
+                        <li>✓ Analyse des menaces</li>
+                        <li>✓ Réponse aux incidents</li>
+                    </ul>
+                    <div class="glow-line"></div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-grid mb-16">
+                <div class="glass-card">
+                    <span class="text-4xl mb-4 block">💎</span>
+                    <h4 class="text-xl font-bold mb-4">Forfaits modulaires</h4>
+                    <p class="text-gray-200">Packages combinant plusieurs services avec remise de 15-20%</p>
+                    <div class="glow-line"></div>
+                </div>
+
+                <div class="glass-card">
+                    <span class="text-4xl mb-4 block">🚀</span>
+                    <h4 class="text-xl font-bold mb-4">Engagement progressif</h4>
+                    <p class="text-gray-200">Premier mois à -50% pour les services d'abonnement</p>
+                    <div class="glow-line"></div>
+                </div>
+
+                <div class="glass-card">
+                    <span class="text-4xl mb-4 block">🎯</span>
+                    <h4 class="text-xl font-bold mb-4">Offres startup</h4>
+                    <p class="text-gray-200">Solutions adaptées aux jeunes entreprises</p>
+                    <div class="glow-line"></div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="glass-card mt-16 overflow-hidden">
+                <h3 class="text-3xl font-bold mb-8 text-center">Comparatif des offres</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-gray-700">
+                                <th class="text-left p-4">Service</th>
+                                <th class="text-left p-4">Prix moyen marché</th>
+                                <th class="text-left p-4">Notre offre</th>
+                                <th class="text-left p-4">Économie</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-200">
+                            <tr>
+                                <td class="p-4">Tests d'intrusion</td>
+                                <td class="p-4">5 000€ - 15 000€</td>
+                                <td class="p-4">4 000€ - 12 000€</td>
+                                <td class="p-4">Jusqu'à 20%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">Formation</td>
+                                <td class="p-4">1 200€ - 1 800€/jour</td>
+                                <td class="p-4">990€/jour</td>
+                                <td class="p-4">Jusqu'à 45%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">SOC as a Service</td>
+                                <td class="p-4">2 500€/mois</td>
+                                <td class="p-4">1 990€/mois</td>
+                                <td class="p-4">20%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">Pack Startup</td>
+                                <td class="p-4">Non disponible</td>
+                                <td class="p-4">990€/mois</td>
+                                <td class="p-4">Service unique</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="glow-line"></div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-container mt-16">
+                <p class="cta-text">Prêt à sécuriser votre entreprise avec des solutions adaptées à votre budget ?</p>
+                <a href="Contacts.html" class="cta-button">
+                    Demander un devis
+                    <span class="cta-button-glow"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4 footer-logo">NOSTROGUARD</div>
+                <p class="text-gray-400">Protection • Expertise • Innovation</p>
+                <div class="mt-8 text-sm text-gray-400">
+                    © 2025 NOSTROGUARD. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/Javascript/index.js"></script>
+</body>
+
+</html>

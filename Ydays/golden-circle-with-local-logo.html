@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #d8d8d8;
+      font-family: Arial, sans-serif;
+    }
+
+    .circle-container {
+      width: 1000px;
+      height: 1000px;
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .circle-content-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .outer-circle {
+      width: 800px;
+      height: 800px;
+      left: 100px;
+      top: 100px;
+      background: linear-gradient(135deg, #4158D0 0%, #C850C0 100%);
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    .middle-circle {
+      width: 533px;
+      height: 533px;
+      left: 233px;
+      top: 233px;
+      background: linear-gradient(135deg, #43C6AC 0%, #191654 100%);
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    .inner-circle {
+      width: 266px;
+      height: 266px;
+      left: 366px;
+      top: 366px;
+      background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);
+      opacity: 0.8;
+      z-index: 3;
+    }
+
+    .circle:hover {
+      transform: scale(1.05);
+      opacity: 1;
+      z-index: 10;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .circle-title {
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin: 40px 0 20px 0;
+      text-align: center;
+    }
+
+    .inner-circle .circle-title {
+      margin-top: 20px;
+    }
+
+    .middle-circle .circle-title {
+      margin-top: 30px;
+    }
+
+    .outer-circle .circle-title {
+      margin-top: 40px;
+    }
+
+    .circle-content {
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .inner-circle .circle-content {
+      font-size: 18px;
+      max-width: 180px;
+    }
+
+    .middle-circle .circle-content {
+      font-size: 20px;
+      max-width: 300px;
+    }
+
+    .outer-circle .circle-content {
+      font-size: 22px;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .circle:hover .circle-content {
+      opacity: 1;
+    }
+
+    .objectives {
+      position: absolute;
+      top: 50%;
+      right: -320px;
+      transform: translateY(-50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+      max-width: 300px;
+    }
+
+    .objectives h3 {
+      margin-top: 0;
+      color: #2d3436;
+      font-size: 24px;
+    }
+
+    .objectives ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #2d3436;
+      font-size: 18px;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 50%;
+      left: -320px;
+      transform: translateY(-50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .logo-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .circle:hover {
+      animation: pulse 10s infinite;
+    }
+
+    /* Styles pour le tableau des cas d'utilisation */
+    .use-cases-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 50px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .use-cases-title {
+      background-color: #0B2F64;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .use-cases-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    .use-cases-table th {
+      background: #0B2F64;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    .use-cases-table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    .use-cases-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .use-case-name {
+      font-weight: bold;
+      color: #0B2F64;
+    }
+
+    .use-case-example {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-container">
+    <div class="circle outer-circle">
+      <div class="circle-content-wrapper">
+        <div class="circle-title">WHAT</div>
+        <div class="circle-content">
+          • 11 étudiants en cybersécurité (B1 à M1)<br>
+          • Audits complets avec solutions concrètes<br>
+          • Sensibilisation adaptée aux entreprises<br>
+          • Accompagnement personnalisé<br>
+          • Expertise accessible aux TPE/PME
+        </div>
+      </div>
+    </div>
+    <div class="circle middle-circle">
+      <div class="circle-content-wrapper">
+        <div class="circle-title">HOW</div>
+        <div class="circle-content">
+          • Démarcher des entreprises<br>
+          • Former une équipe polyvalente<br>
+          • Développer des compétences spécifiques<br>
+          • Approche pédagogique adaptée<br>
+          • Tirer parti de notre diversité de profils
+        </div>
+      </div>
+    </div>
+    <div class="circle inner-circle">
+      <div class="circle-content-wrapper">
+        <div class="circle-title">WHY</div>
+        <div class="circle-content">
+          Répondre aux menaces cyber croissantes<br>
+          en accompagnant ceux qui manquent<br>
+          de temps et de connaissances
+        </div>
+      </div>
+    </div>
+    <div class="objectives">
+      <h3>Objectifs</h3>
+      <ul>
+        <li>Minimum 5 rapports d'audit</li>
+        <li>Reconnaissance chez Ynov</li>
+        <li>Autonomie complète de l'équipe</li>
+        <li>Développement des compétences de chacun</li>
+        <li>Création d'une structure pérenne</li>
+      </ul>
+    </div>
+    <div class="logo-container">
+      <img src="C:\Users\G614\Documents\cours\Ydays\NOSTROGUARD.png" alt="Logo NOSTROGUARD SECURITY" />
+    </div>
+  </div>
+
+  <div class="use-cases-container">
+    <div class="use-cases-title">Nos Services - Cas d'Utilisation</div>
+    <table class="use-cases-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Pourquoi</th>
+          <th>Comment</th>
+          <th>Quoi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="use-case-name">Score de Risque Cyber</div>
+          </td>
+          <td>Pour évaluer la posture de cybersécurité de votre entreprise, identifier les vulnérabilités et faciliter la gestion des risques.</td>
+          <td>Utilisation de méthodes d'évaluation standards pour analyser vos systèmes et générer un score reflétant votre niveau de risque cyber.</td>
+          <td>Rapport détaillé avec score de risque, recommandations personnalisées et accompagnement pour renforcer votre cybersécurité.</td>
+        </tr>
+        
+        <tr>
+          <td>
+            <div class="use-case-name">Analyse des Risques de la Chaîne d'Approvisionnement</div>
+          </td>
+          <td>Pour identifier et atténuer les risques cyber liés à vos fournisseurs et partenaires, assurant la continuité de vos opérations.</td>
+          <td>Évaluation des interdépendances avec vos partenaires, analyse des points faibles et simulation d'impacts potentiels.</td>
+          <td>Cartographie complète de votre écosystème, identification des maillons faibles et plan d'action pour sécuriser votre chaîne d'approvisionnement.</td>
+        </tr>
+        
+        <tr>
+          <td>
+            <div class="use-case-name">Audit Shadow IT</div>
+          </td>
+          <td>Pour maîtriser les risques liés aux technologies non autorisées mais utilisées dans votre entreprise.</td>
+          <td>Détection rapide des systèmes non gérés, évaluation des risques associés et analyse de leur conformité avec vos politiques.</td>
+          <td>Inventaire complet du Shadow IT, évaluation des risques et recommandations pour une meilleure gouvernance technologique.</td>
+        </tr>
+        
+        <tr>
+          <td>
+            <div class="use-case-name">Formation et Sensibilisation</div>
+          </td>
+          <td>Pour renforcer le maillon humain, souvent le plus vulnérable face aux cybermenaces.</td>
+          <td>Sessions adaptées à vos besoins spécifiques, utilisant des cas concrets et des simulations d'attaques pour une meilleure assimilation.</td>
+          <td>Modules de formation personnalisés, exercices pratiques et suivi de progression pour garantir l'efficacité de la sensibilisation.</td>
+        </tr>
+        
+        <tr>
+          <td>
+            <div class="use-case-name">Évaluations de Sécurité Automatisées</div>
+          </td>
+          <td>Pour fournir une surveillance continue et économique de votre posture de sécurité.</td>
+          <td>Intégration d'outils automatisés combinés à l'expertise humaine pour une analyse complète et pertinente.</td>
+          <td>Rapports réguliers, alertes en temps réel et tableau de bord de suivi pour visualiser l'évolution de votre sécurité.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -15,7 +15,7 @@ const questions = [
         options: [
             "Oui, C'est légitime.",
             "Non, C'est une tentative de phishing",
-            "Je ne sait pas"
+            "Je ne sais pas"
         ],
         correctAnswer: 1,
         explanation: "Parce que le site n'est pas sécurisé par le protocole HTTPS.",
@@ -26,7 +26,7 @@ const questions = [
         options: [
             "Oui, C'est légitime.",
             "Non, C'est une tentative de phishing",
-            "Je ne sait pas"
+            "Je ne sais pas"
         ],
         correctAnswer: 1,
         explanation: "Le site n'est pas légitime car il vous redirige vers un faux site.",
@@ -37,7 +37,7 @@ const questions = [
         options: [
             "Oui, C'est légitime.",
             "Non, C'est une tentative de phishing",
-            "Je ne sait pas"
+            "Je ne sais pas"
         ],
         correctAnswer: 1,
         explanation: "Le site n'est pas légitime car il vous redirige vers un faux site.",
