@@ -107,35 +107,68 @@ body {
 .cyber-button {
     position: relative;
     padding: 15px 30px;
-    color: white;
+    color: #64b5f6;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid #64b5f6;
     text-transform: uppercase;
     letter-spacing: 2px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
     z-index: 1;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(100, 181, 246, 0.3);
+    font-weight: bold;
 }
 
 .cyber-button:hover {
-    background: white;
-    color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
 }
 
 .cyber-button__glitch {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-100%);
-    transition: 0.3s;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: repeating-linear-gradient(120deg,
+            transparent 0%,
+            rgba(100, 181, 246, 0.3) 3%,
+            transparent 6%);
+    animation: glitch 3s infinite linear;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .cyber-button:hover .cyber-button__glitch {
-    transform: translateX(100%);
+    opacity: 1;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
 /* Services Cards */
@@ -639,11 +672,11 @@ body {
     animation: buttonGlow 2s linear infinite;
 }
 
-.divider{
+.divider {
     margin: 20px 420px;
     border: 0.5px solid #0d47a1;
     background-color: #0d47a1;
-  }
+}
 
 @keyframes glow {
 
@@ -751,4 +784,61 @@ body {
 
 .dark-gradient-section .form-group .line {
     background: var(--accent);
+}
+
+/* Add this to your existing CSS */
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Add these styles for better appearance and smooth scrolling */
+.overflow-hidden {
+    position: relative;
+    background: var(--bg-light);
+}
+
+.overflow-hidden::before,
+.overflow-hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.overflow-hidden::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-light), transparent);
+}
+
+.overflow-hidden::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-light), transparent);
+}
+
+.inline-flex {
+    display: inline-flex;
+    gap: 2rem;
+}
+
+.inline-flex img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.inline-flex img:hover {
+    transform: scale(1.05);
 }

@@ -8,7 +8,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Le phishing est une technique frauduleuse visant à obtenir des informations confidentielles en se faisant passer pour une entité de confiance.",
-        image: "/assets/Images/Phishing_email_1-min.png"
+        image: "../assets/Images/Phishing_email_1-min.png"
     },
     {
         question: "Cet e-mail est-il légitime ou une tentative de phishing ? ?",
@@ -19,7 +19,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Parce que le site n'est pas sécurisé par le protocole HTTPS.",
-        image: "/assets/Images/Screenshot 2021-08-11 09.21.50.png"
+        image: "../assets/Images/Screenshot 2021-08-11 09.21.50.png"
     },
     {
         question: "Cet e-mail est-il légitime ou une tentative de phishing ? ?",
@@ -30,7 +30,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Le site n'est pas légitime car il vous redirige vers un faux site.",
-        image: "/assets/Images/image_faux_mail.jpg"
+        image: "../assets/Images/image_faux_mail.jpg"
     },
     {
         question: "Cet e-mail est-il légitime ou une tentative de phishing ? ?",
@@ -41,7 +41,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Le site n'est pas légitime car il vous redirige vers un faux site.",
-        image: "/assets/Images/phishing3.png"
+        image: "../assets/Images/phishing3.png"
     },
     {
         question: "Que devez-vous faire si vous recevez un email suspect ?",
@@ -52,7 +52,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Il est préférable de supprimer les emails suspects sans les ouvrir pour éviter tout risque d'infection.",
-        image: "/assets/Images/publithings_seo_photo_which_illustrates_hacker_attacks_by_email_20e171fe-d9c7-44f1-80d4-1ed1ba1bac55-632x330.webp"
+        image: "../assets/Images/publithings_seo_photo_which_illustrates_hacker_attacks_by_email_20e171fe-d9c7-44f1-80d4-1ed1ba1bac55-632x330.webp"
     },
     {
         question: "Que devez-vous faire avant de cliquer sur un lien dans un email ?",
@@ -63,7 +63,7 @@ const questions = [
         ],
         correctAnswer: 0,
         explanation: "Toujours vérifier l'URL d'un lien avant de cliquer dessus permet d'éviter les tentatives de phishing.",
-        image: "/assets/Images/Verifier-un-site-avant-de-cliquer.png"
+        image: "../assets/Images/Verifier-un-site-avant-de-cliquer.png"
     },
     {
         question: "Pourquoi est-il risqué de brancher une clé USB trouvée sur un parking ?",
@@ -74,7 +74,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Des pirates utilisent des clés USB infectées pour propager des virus ou voler des données dès qu’elles sont branchées.",
-        image: "/assets/Images/What-Is-a-USB-Drop-Attack-Featured-Image.jpg"
+        image: "../assets/Images/What-Is-a-USB-Drop-Attack-Featured-Image.jpg"
     },
     {
         question: "Peut-on se fier à un réseau public pour consulter ses données bancaires ?",
@@ -85,7 +85,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Un réseau public peut être compromis, et un pirate peut intercepter vos données, même chiffrées.",
-        image: "/assets/Images/blog-banking-details@2x.png"
+        image: "../assets/Images/blog-banking-details@2x.png"
     },
     {
         question: "À quelle fréquence faut-il changer son mot de passe ?",
@@ -96,7 +96,7 @@ const questions = [
         ],
         correctAnswer: 1,
         explanation: "Changer régulièrement son mot de passe réduit le risque d’accès non autorisé en cas de fuite de données.",
-        image: "/assets/Images/mot-de-passe.jpg"
+        image: "../assets/Images/mot-de-passe.jpg"
     },
     {
         question: "Quelles informations ne faut-il jamais mettre sur ses réseaux sociaux ?",
@@ -108,7 +108,7 @@ const questions = [
         ],
         correctAnswer: 3,
         explanation: "Publier des informations personnelles (adresse, numéro de carte, employeur…) facilite le vol d’identité et les cyberattaques.",
-        image: "/assets/Images/Facebook-Hackers.jpg"
+        image: "../assets/Images/Facebook-Hackers.jpg"
     }
 ];
 
