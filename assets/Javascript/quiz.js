@@ -13,11 +13,11 @@ const questions = [
     {
         question: "Cet e-mail est-il légitime ou une tentative de phishing ? ?",
         options: [
-            "Oui, C'est légitime.",
             "Non, C'est une tentative de phishing",
+            "Oui, C'est légitime.",
             "Je ne sais pas"
         ],
-        correctAnswer: 1,
+        correctAnswer: 0,
         explanation: "Parce que le site n'est pas sécurisé par le protocole HTTPS.",
         image: "./assets/Images/Screenshot 2021-08-11 09.21.50.png"
     },
@@ -25,10 +25,10 @@ const questions = [
         question: "Cet e-mail est-il légitime ou une tentative de phishing ? ?",
         options: [
             "Oui, C'est légitime.",
-            "Non, C'est une tentative de phishing",
-            "Je ne sais pas"
+            "Je ne sais pas",
+            "Non, C'est une tentative de phishing"
         ],
-        correctAnswer: 1,
+        correctAnswer: 2,
         explanation: "Le site n'est pas légitime car il vous redirige vers un faux site.",
         image: "./assets/Images/image_faux_mail.jpg"
     },
@@ -46,19 +46,19 @@ const questions = [
     {
         question: "Que devez-vous faire si vous recevez un email suspect ?",
         options: [
-            "Ouvrir les pièces jointes pour vérifier leur contenu",
             "Supprimer l'email sans l'ouvrir",
+            "Ouvrir les pièces jointes pour vérifier leur contenu",
             "Répondre à l'email pour demander des informations supplémentaires"
         ],
-        correctAnswer: 1,
+        correctAnswer: 0,
         explanation: "Il est préférable de supprimer les emails suspects sans les ouvrir pour éviter tout risque d'infection.",
         image: "./assets/Images/publithings_seo_photo_which_illustrates_hacker_attacks_by_email_20e171fe-d9c7-44f1-80d4-1ed1ba1bac55-632x330.webp"
     },
     {
         question: "Que devez-vous faire avant de cliquer sur un lien dans un email ?",
         options: [
-            "Vérifier l'URL du lien en survolant le lien avec la souris",
             "Cliquer directement sur le lien sans vérifier",
+            "Vérifier l'URL du lien en survolant le lien avec la souris",
             "Partager le lien avec vos amis pour vérifier s'il est sûr"
         ],
         correctAnswer: 0,
@@ -80,10 +80,10 @@ const questions = [
         question: "Peut-on se fier à un réseau public pour consulter ses données bancaires ?",
         options: [
             "Oui, si le réseau appartient à une entreprise connue",
-            "Non, car un attaquant peut intercepter les données même si elles sont chiffrées",
-            "Non, car les réseaux publics sont automatiquement contrôlés par des hackers"
+            "Non, car les réseaux publics sont automatiquement contrôlés par des hackers",
+            "Non, car un attaquant peut intercepter les données même si elles sont chiffrées"
         ],
-        correctAnswer: 1,
+        correctAnswer: 2,
         explanation: "Un réseau public peut être compromis, et un pirate peut intercepter vos données, même chiffrées.",
         image: "./assets/Images/blog-banking-details@2x.png"
     },
@@ -207,6 +207,27 @@ function showResults() {
     } else {
         feedback.textContent = "Félicitations ! Vous avez une bonne compréhension des bases de la cybersécurité.";
     }
+
+    // Add event listener for the PDF download button
+    document.getElementById('download-pdf').addEventListener('click', downloadPDF);
+}
+
+// Function to handle PDF download
+function downloadPDF() {
+    const pdfPath = "./resources/Nostroguard.pdf";
+
+    // Create a hidden anchor element
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = "Guide_Cybersecurite_Nostroguard.pdf";
+
+    // Trigger the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Track download event (optional)
+    console.log("PDF download initiated");
 }
 
 document.getElementById('continue-btn').addEventListener('click', () => {
