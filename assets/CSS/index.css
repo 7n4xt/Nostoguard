@@ -784,49 +784,61 @@ body {
     background: var(--accent);
 }
 
-/* Replace the existing marquee animation styles with these improved ones */
+/* Replace existing marquee styles with these new styles */
 
-.marquee-container {
+.partners-section {
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-wrapper {
     position: relative;
     width: 100%;
-    max-width: 100%;
     overflow: hidden;
-    display: flex;
+    padding: 20px 0;
 }
 
-.animate-marquee {
+.marquee {
     display: flex;
-    animation: marquee 30s linear infinite;
-    min-width: 100%;
+    width: fit-content;
+    animation: scroll 40s linear infinite;
 }
 
-@keyframes marquee {
-    from {
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
         transform: translateX(0);
     }
 
-    to {
-        transform: translateX(-100%);
+    100% {
+        transform: translateX(-50%);
     }
 }
 
-.inline-flex {
-    display: inline-flex;
-    gap: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.marquee-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: 40px;
+    padding: 0 20px;
 }
 
-.inline-flex img {
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    height: 40px;
+.marquee-img {
+    height: 180px;
     width: auto;
     object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-.inline-flex img:hover {
+.marquee-img:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* Add this to your existing CSS file */
