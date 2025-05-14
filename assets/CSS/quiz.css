@@ -160,3 +160,53 @@ h2 {
 .full-course-option {
   margin-bottom: 20px;
 }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  .question-container {
+    padding: 1rem;
+  }
+
+  .question-container .mb-8 {
+    height: 300px;
+  }
+
+  .question-container p.text-xl {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .cyber-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  #final-score {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .question-container .mb-8 {
+    height: 200px;
+  }
+
+  .question-container label {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .feedback-correct,
+  .feedback-incorrect {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .full-course-button {
+    padding: 12px 20px;
+  }
+
+  #results-container h3 {
+    font-size: 1.5rem;
+  }
+}

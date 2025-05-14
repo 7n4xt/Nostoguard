@@ -143,6 +143,43 @@ h2 {
     .price-card__price {
         font-size: 2rem;
     }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-container {
+        padding: 1.5rem;
+    }
+
+    h2.section-title {
+        font-size: 2rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .soon-tag {
+        font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+}
+
+/* Add horizontal scroll for tables on mobile */
+.overflow-x-auto {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
 }
 
 .features-grid {

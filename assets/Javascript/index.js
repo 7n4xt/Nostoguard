@@ -18,40 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fonction principale d'initialisation
 function initializeWebsite() {
-    handleLoader();
-    initMobileMenu();
     initScrollProgress();
     initSmoothScroll();
     initFormHandling();
     initAnimations();
-    initScrollArrow(); // Add this line
-}
-
-// Gestion du loader
-function handleLoader() {
-    const loader = document.querySelector('.loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 1000);
-}
-
-// Menu mobile
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    hamburger?.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobileMenu?.classList.toggle('hidden');
-    });
-
-    // Fermer le menu au clic sur un lien
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu?.classList.add('hidden');
-            hamburger?.classList.remove('active');
-        });
-    });
+    initScrollArrow();
 }
 
 // Barre de progression du scroll

@@ -248,7 +248,48 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .brief-description {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-card {
+    min-height: 300px;
+  }
+
   .chart-wrapper {
-    margin: 10px;
+    margin: 10px 0;
+    padding: 20px;
+  }
+
+  .awareness-hero {
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .Quiz-btn {
+    padding: 0 1.5em;
+    font-size: 16px;
+  }
+
+  .process-card {
+    padding: 20px;
   }
 }

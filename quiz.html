@@ -9,13 +9,15 @@
     <link rel="icon" href="./assets/Images/NOSTROMOGAURD (1).png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-
+    <link href="./assets/CSS/loader.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/CSS/quiz.css">
     <script src="./assets/Javascript/quiz.js" defer></script>
-
 </head>
 
 <body class="bg-gray-50">
+    <!-- Loader -->
+    <div class="loader"></div>
+
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-5">
@@ -90,6 +92,11 @@
         </div>
         </div>
     </section>
+
+    <!-- Loader JS - Place right before closing body tag -->
+    <script src="./assets/Javascript/loader.js"></script>
+    <!-- Mobile Menu Script -->
+    <script src="./assets/Javascript/mobileMenu.js"></script>
 </body>
 
 </html>

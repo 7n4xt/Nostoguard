@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tarifs - NOSTROGUARD</title>
     <!-- Favicon -->
     <link rel="icon" href="./assets/Images/NOSTROMOGAURD (1).png" type="image/png">
@@ -13,13 +13,13 @@
     <!-- Notre CSS -->
     <link href="./assets/CSS/index.css" rel="stylesheet">
     <link href="./assets/CSS/tarif.css" rel="stylesheet">
+    <!-- Loader CSS -->
+    <link href="./assets/CSS/loader.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-50">
     <!-- Loader -->
-    <div class="loader">
-        <div class="loader__spinner"></div>
-    </div>
+    <div class="loader"></div>
 
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
@@ -36,23 +36,9 @@
                     <a href="formation.html" class="nav-link">Formation</a>
                     <a href="Contacts.html" class="nav-link">Contactez-nous</a>
                 </div>
-                <div class="md:hidden">
-                    <button class="hamburger-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu hidden">
-        <a href="formation.html" class="nav-link">Formation</a>
-        <a href="tarif.html" class="nav-link">Tarifs</a>
-        <a href="Contacts.html" class="nav-link">Contactez-nous</a>
-    </div>
 
     <!-- Tarifs Section -->
     <section class="pricing-section dark-gradient-section">
@@ -194,7 +180,10 @@
     </footer>
 
     <script src="./assets/Javascript/index.js"></script>
-
-</html>
+    <!-- Loader JS -->
+    <script src="./assets/Javascript/loader.js"></script>
+    <!-- Mobile Menu Script -->
+    <script src="./assets/Javascript/mobileMenu.js"></script>
+</body>
 
 </html>

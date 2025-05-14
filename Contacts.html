@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Contactez-nous - NOSTROGUARD</title>
   <!-- Favicon -->
   <link rel="icon" href="./assets/Images/NOSTROMOGAURD (1).png" type="image/png">
+  <!-- Loader CSS -->
+  <link href="./assets/CSS/loader.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <!-- css -->
@@ -19,9 +21,7 @@
 
 <body>
   <!-- Loader -->
-  <div class="loader">
-    <div class="loader__spinner"></div>
-  </div>
+  <div class="loader"></div>
 
   <!-- Navigation -->
   <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
@@ -197,6 +197,10 @@
       </div>
     </div>
   </footer>
+  <!-- Loader JS - Place right before closing body tag -->
+  <script src="./assets/Javascript/loader.js"></script>
+  <!-- Mobile Menu Script -->
+  <script src="./assets/Javascript/mobileMenu.js"></script>
 </body>
 
 </html>
