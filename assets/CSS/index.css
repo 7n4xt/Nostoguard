@@ -784,61 +784,49 @@ body {
     background: var(--accent);
 }
 
-/* Add this to your existing CSS */
+/* Replace the existing marquee animation styles with these improved ones */
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+}
 
 .animate-marquee {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
+    display: flex;
+    animation: marquee 30s linear infinite;
+    min-width: 100%;
 }
 
 @keyframes marquee {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(-100%);
     }
-}
-
-/* Add these styles for better appearance and smooth scrolling */
-.overflow-hidden {
-    position: relative;
-    background: var(--bg-light);
-}
-
-.overflow-hidden::before,
-.overflow-hidden::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
-}
-
-.overflow-hidden::before {
-    left: 0;
-    background: linear-gradient(to right, var(--bg-light), transparent);
-}
-
-.overflow-hidden::after {
-    right: 0;
-    background: linear-gradient(to left, var(--bg-light), transparent);
 }
 
 .inline-flex {
     display: inline-flex;
-    gap: 2rem;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .inline-flex img {
     border-radius: 10px;
     transition: transform 0.3s ease;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .inline-flex img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Add this to your existing CSS file */
