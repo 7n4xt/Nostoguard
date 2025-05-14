@@ -184,3 +184,51 @@ tr:hover td {
         font-size: 0.9rem;
     }
 }
+
+.unavailable-service {
+    position: relative;
+    filter: grayscale(90%);
+    opacity: 0.7;
+    pointer-events: none;
+    overflow: visible !important;
+}
+
+.soon-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-service {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent);
+    z-index: 2;
+}
+
+.highlight-service:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.unavailable-row {
+    opacity: 0.6;
+    filter: grayscale(70%);
+}
+
+.highlight-row {
+    background: rgba(100, 181, 246, 0.1);
+    font-weight: bold;
+}
+
+.highlight-row td {
+    border-left: 3px solid var(--accent);
+}

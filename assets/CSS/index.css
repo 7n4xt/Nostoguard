@@ -353,8 +353,6 @@ body {
     transition: width 0.3s ease;
 }
 
-
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -841,4 +839,36 @@ body {
 
 .inline-flex img:hover {
     transform: scale(1.05);
+}
+
+/* Add this to your existing CSS file */
+.scroll-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.scroll-arrow:hover {
+    opacity: 1;
+}
+
+.animate-bounce {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }

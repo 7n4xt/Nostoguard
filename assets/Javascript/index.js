@@ -24,6 +24,7 @@ function initializeWebsite() {
     initSmoothScroll();
     initFormHandling();
     initAnimations();
+    initScrollArrow(); // Add this line
 }
 
 // Gestion du loader
@@ -136,4 +137,24 @@ function initAnimations() {
             sphere.style.transform = `translateY(${scrolled * 0.5}px) rotate(${scrolled * 0.2}deg)`;
         }
     });
+}
+
+// Flèche de défilement
+function initScrollArrow() {
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', () => {
+            // Scroll to the section right after the hero
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // If services section doesn't exist, just scroll down by the viewport height
+                window.scrollBy({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 }
