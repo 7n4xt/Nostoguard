@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Paiement - NOSTROGUARD</title>
+    <link rel="icon" href="./assets/Images/NOSTROMOGAURD (1).png" type="image/png">
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="./assets/CSS/index.css" rel="stylesheet">
+    <link href="./assets/CSS/paiement.css" rel="stylesheet">
+    <link href="./assets/CSS/loader.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="loader"></div>
+
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex items-center justify-between">
+                <div class="left-nav">
+                    <a href="index.html" class="flex items-center">
+                        <div class="text-2xl font-bold text-blue-900">NOSTROGUARD</div>
+                        <img class="logo" src="./assets/Images/NOSTROMOGAURD (1).png" alt="logo">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="formation.html" class="nav-link">Formation</a>
+                    <a href="tarif.html" class="nav-link">Tarifs</a>
+                    <a href="Contacts.php" class="nav-link">Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="payment-section">
+        <div class="payment-wrapper">
+            <div class="payment-grid">
+                
+                <!-- Order Summary -->
+                <div class="order-summary-card">
+                    <h2>Récapitulatif</h2>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Formation sélectionnée</span>
+                        <span class="summary-value" id="formation-type">Formation Standard</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Prix par jour</span>
+                        <span class="summary-value" id="formation-price">990€</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Nombre de jours</span>
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn" id="decrease-qty">-</button>
+                            <span class="quantity" id="quantity">1</span>
+                            <button type="button" class="qty-btn" id="increase-qty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span class="total-price" id="total-price">990€</span>
+                    </div>
+                    
+                    <div class="features-section">
+                        <h3>Inclus dans votre formation</h3>
+                        <ul id="features-list">
+                            <li>✓ Sessions interactives</li>
+                            <li>✓ Contenu personnalisé</li>
+                            <li>✓ Exercices pratiques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form-card">
+                    <h2>Informations de paiement</h2>
+                    
+                    <form id="payment-form">
+                        <div class="section-title">Informations personnelles</div>
+                        
+                        <div class="input-row">
+                            <div class="input-wrapper">
+                                <label>Prénom</label>
+                                <input type="text" id="first-name" placeholder="Jean" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>Nom</label>
+                                <input type="text" id="last-name" placeholder="Dupont" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="jean.dupont@entreprise.com" required>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label>Entreprise</label>
+                            <input type="text" id="company" placeholder="Nom de votre entreprise" required>
+                        </div>
+                        
+                        <div class="section-title">Informations bancaires</div>
+                        
+                        <div class="input-wrapper">
+                            <label>Numéro de carte</label>
+                            <div class="card-input">
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                <span class="card-icon">💳</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="input-wrapper">
+                                <label>Date d'expiration</label>
+                                <input type="text" id="expiry-date" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label>CVV</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+                        
+                        <div class="security-badge">
+                            <span class="lock-icon">🔒</span>
+                            <span>Paiement sécurisé. Vos informations sont cryptées et protégées.</span>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            Procéder au paiement
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="success-checkmark">✓</div>
+            <h2>Paiement réussi !</h2>
+            <p>Votre formation a été réservée avec succès.</p>
+            <p>Vous recevrez un email de confirmation sous peu.</p>
+            <button onclick="closeModal()" class="modal-btn">Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4 footer-logo">NOSTROGUARD</div>
+                <p class="text-gray-400">Protection • Expertise • Innovation</p>
+                <div class="mt-8 text-sm text-gray-400">
+                    © 2025 NOSTROGUARD. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/Javascript/index.js"></script>
+    <script src="./assets/Javascript/loader.js"></script>
+    <script src="./assets/Javascript/mobileMenu.js"></script>
+    <script src="./assets/Javascript/paiement.js"></script>
+</body>
+
+</html>

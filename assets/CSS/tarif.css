@@ -246,10 +246,17 @@ tr:hover td {
 }
 
 .highlight-service {
+
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
     border: 2px solid var(--accent);
     z-index: 2;
+
+    .glass-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border: 2px solid var(--accent);
+    }
 }
 
 .highlight-service:hover {
@@ -376,4 +383,36 @@ tr:hover td {
         max-width: 100%;
         width: 100%;
     }
+}
+
+/* Buy Button on Cards */
+.card-buy-button {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--accent) 0%, #5aa5e6 100%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(100, 181, 246, 0.4);
+}
+
+.button-arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card-buy-button:hover .button-arrow {
+    transform: translateX(5px);
 }
