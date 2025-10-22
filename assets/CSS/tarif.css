@@ -269,3 +269,111 @@ tr:hover td {
 .highlight-row td {
     border-left: 3px solid var(--accent);
 }
+
+/* Stacked Cards Layout */
+.stacked-cards-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    perspective: 1000px;
+}
+
+.main-card {
+    position: relative;
+    z-index: 10;
+    width: 380px;
+    min-height: 420px;
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.hidden-card {
+    position: absolute;
+    width: 380px;
+    min-height: 420px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden-card-left {
+    left: 50%;
+    transform: translateX(-50%) translateY(50px) scale(0.95);
+}
+
+.hidden-card-right {
+    left: 50%;
+    transform: translateX(-50%) translateY(50px) scale(0.95);
+}
+
+.hidden-card.reveal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.hidden-card-left.reveal {
+    transform: translateX(calc(-50% - 420px)) translateY(0) scale(1);
+}
+
+.hidden-card-right.reveal {
+    transform: translateX(calc(-50% + 420px)) translateY(0) scale(1);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.05) translateY(0);
+    }
+}
+
+/* Responsive adjustments for stacked cards */
+@media (max-width: 1400px) {
+    .hidden-card-left.reveal {
+        transform: translateX(calc(-50% - 380px)) translateY(0) scale(0.95);
+    }
+    
+    .hidden-card-right.reveal {
+        transform: translateX(calc(-50% + 380px)) translateY(0) scale(0.95);
+    }
+}
+
+@media (max-width: 1200px) {
+    .stacked-cards-container {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: auto;
+    }
+
+    .main-card,
+    .hidden-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .hidden-card {
+        position: relative;
+        left: 0 !important;
+    }
+
+    .hidden-card-left.reveal,
+    .hidden-card-right.reveal {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+
+    .hidden-card.reveal {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-card,
+    .hidden-card {
+        max-width: 100%;
+        width: 100%;
+    }
+}

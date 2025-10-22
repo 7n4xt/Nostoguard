@@ -173,7 +173,7 @@
 
 <?php
   if((isset($_POST['message']) && isset($_POST['subject']) ) && (isset($_POST['email']) && isset($_POST['name']))) {
-    $to = "perceval.baillythomas@ynov.com";
+    $to = "example@test.com";
     $subject = $_POST["subject"];
     $body = "Name:". $_POST['name'];
     $body .= "Email:". $_POST['email'];
