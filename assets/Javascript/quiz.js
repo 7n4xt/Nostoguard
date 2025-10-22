@@ -61,7 +61,7 @@ const questions = [
             "Vérifier l'URL du lien en survolant le lien avec la souris",
             "Partager le lien avec vos amis pour vérifier s'il est sûr"
         ],
-        correctAnswer: 0,
+        correctAnswer: 1,
         explanation: "Toujours vérifier l'URL d'un lien avant de cliquer dessus permet d'éviter les tentatives de phishing.",
         image: "./assets/Images/Verifier-un-site-avant-de-cliquer.png"
     },
