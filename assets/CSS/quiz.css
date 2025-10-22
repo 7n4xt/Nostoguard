@@ -33,20 +33,21 @@
 .cyber-button {
   position: relative;
   padding: 15px 30px;
-  color: white;
-  background: #1a237e;
+  color: #ffffff;
+  background: #06b6d4; /* cyan base */
   border: none;
   text-transform: uppercase;
   letter-spacing: 2px;
   overflow: hidden;
-  transition: 0.3s;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .cyber-button:hover {
-  background: #0d47a1;
+  background: #0891b2; /* darker cyan on hover */
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(8,145,178,0.12);
 }
 
 .cyber-button:disabled {
@@ -184,6 +185,18 @@ h2 {
   #final-score {
     font-size: 2.5rem;
   }
+
+  .pricing-section .cards-grid .glass-card {
+    width: 90%;
+    height: auto;
+    padding: 1.25rem;
+    justify-content: center;
+  }
+
+  .pricing-section .cards-grid .glass-card .card-cta {
+    width: auto;
+    padding: 12px 22px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -209,4 +222,131 @@ h2 {
   #results-container h3 {
     font-size: 1.5rem;
   }
+
+  .quiz-card {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  main.container {
+    padding-top: 5.5rem;
+  }
+
+}
+
+.quiz-card {
+  width: 340px;
+  height: 340px; /* carré */
+  background: linear-gradient(180deg, #ffffff 0%, #f3f6ff 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(10, 25, 80, 0.12);
+}
+
+.quiz-card-title {
+  font-size: 1.25rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.quiz-card-text {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.3;
+  padding: 0 8px;
+}
+
+.quiz-card-button {
+  width: 100%;
+  max-width: 220px;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+main.container {
+  padding-top: 8rem; /* évite que le contenu soit masqué par la nav fixe */
+}
+
+/* fallback grid si vous préférez CSS pur au lieu des classes Tailwind */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.pricing-section .cards-grid {
+  justify-items: center; /* centre les cartes dans la grille */
+}
+
+.pricing-section .cards-grid .glass-card {
+  width: 340px;
+  height: 350px;
+  max-width: none;
+  min-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement le contenu dans la carte */
+  align-items: center;     /* centre horizontalement */
+  text-align: center;
+  padding: 1.75rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: default; /* la carte n'est plus cliquable globalement */
+  gap: 1rem;       /* espace entre contenu et bouton */
+}
+
+.pricing-section .cards-grid .glass-card .price-card__header {
+  margin-bottom: 0.75rem;
+  width: 100%;
+  display: block;
+}
+
+/* Centre les titres et paragraphes et évite qu'ils s'étirent vers le bas */
+.pricing-section .cards-grid .glass-card h3,
+.pricing-section .cards-grid .glass-card p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+/* Si vous avez besoin que le texte prenne l'espace central (utile pour hauteur fixe) */
+.pricing-section .cards-grid .glass-card p {
+  flex: 0 0 auto;
+}
+
+.pricing-section .cards-grid .glass-card .card-cta {
+  margin-top: 0.5rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  background: #06b6d4; /* cyan */
+  color: #ffffff;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Hover effect pour le bouton */
+.pricing-section .cards-grid .glass-card .card-cta:hover {
+  background: #0891b2; /* darker cyan on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(8,145,178,0.12);
 }

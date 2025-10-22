@@ -7,9 +7,12 @@
     <title>Quiz de Cybersécurité - NOSTROGUARD</title>
     <!-- Favicon -->
     <link rel="icon" href="./assets/Images/NOSTROMOGAURD (1).png" type="image/png">
+    <!-- Tailwind / Animate (comme les autres pages) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="./assets/CSS/loader.css" rel="stylesheet">
+    <!-- Styles globaux (index) + tarif (pour le même look) + quiz spécifique -->
+    <link href="./assets/CSS/index.css" rel="stylesheet">
+    <link href="./assets/CSS/tarif.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/CSS/quiz.css">
     <script src="./assets/Javascript/quiz.js" defer></script>
 </head>
@@ -18,14 +21,14 @@
     <!-- Loader -->
     <div class="loader"></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
+    <!-- Navigation (identique aux autres pages) -->
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
         <div class="container mx-auto px-6 py-5">
             <div class="flex items-center justify-between">
                 <div class="left-nav">
                     <a href="index.html" class="flex items-center">
                         <div class="text-2xl font-bold text-blue-900">NOSTROGUARD</div>
-                        <img class="w-16 ml-4" src="./assets/Images/NOSTROMOGAURD (1).png" alt="logo">
+                        <img class="logo" src="./assets/Images/NOSTROMOGAURD (1).png" alt="logo">
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
@@ -38,64 +41,55 @@
         </div>
     </nav>
 
-    <!-- Quiz Section -->
-    <section class="container mx-auto px-6 pt-32 pb-24">
-        <h2 class="text-5xl font-bold text-center text-gray-800 mb-16 mt-30">Quiz de Sensibilisation à la Cybersécurité
-        </h2>
+    <!-- Section principale : utilise les classes de tarif.css pour le même rendu -->
+    <section class="pricing-section dark-gradient-section">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-white mb-12" style="margin-top: 30px;">Nos Quiz</h2>
 
-        <!-- Progress Bar -->
-        <div class="w-full bg-gray-200 rounded-full h-2.5 mb-8 max-w-2xl mx-auto">
-            <div id="progress-bar" class="bg-blue-900 h-2.5 rounded-full" style="width: 0%"></div>
-        </div>
-
-        <div id="quiz-container" class="max-w-4xl mx-auto"> <!-- Increased max-width -->
-            <div class="question-container bg-white p-8 rounded-lg shadow-md">
-                <!-- Image Space -->
-                <div class="mb-8 w-full bg-gray-100 rounded-lg overflow-hidden">
-                    <img id="question-image" alt="Question illustration" class="w-full h-full object-contain">
-                </div>
-
-                <!-- Question Content -->
-                <div id="question-content"></div>
-
-                <!-- Feedback Container -->
-                <div id="feedback-container" class="hidden mt-6 p-4 rounded-lg"></div>
-
-                <!-- Navigation Buttons -->
-                <div class="mt-6 flex justify-between">
-                    <button id="back-btn" class="cyber-button" disabled>Précédent</button>
-                    <button id="continue-btn" class="cyber-button hidden">Continuer</button>
-                </div>
+        <div class="cards-grid mb-12">
+          <div class="glass-card">
+            <div class="price-card__header">
+              <h3 class="text-2xl font-bold mb-4">Quiz Cybersécurité — Débutant</h3>
+              <p class="text-gray-300">10 questions — 5 min</p>
             </div>
-        </div>
+            <p class="text-gray-200 mt-4">Testez les bases de la cybersécurité : mots de passe, phishing, bonnes pratiques.</p>
+            <a class="card-cta cyber-button" href="quiz_1.html" aria-label="Commencer Quiz Débutant">Commencer le quiz</a>
+          </div>
 
-        <!-- Results Container -->
-        <div id="results-container" class="max-w-2xl mx-auto hidden">
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <h3 class="text-3xl font-bold mb-4">Votre score: <span id="final-score"></span>/10</h3>
-                <p id="final-feedback" class="text-xl mb-6"></p>
-
-                <div class="action-buttons mb-8">
-                    <div
-                        class="pdf-option bg-green-50 p-4 rounded-lg border border-green-200 hover:shadow-lg transition-all">
-                        <h4 class="text-xl font-bold text-green-900 mb-2">Guide de cybersécurité</h4>
-                        <p class="mb-4">Téléchargez notre guide gratuit (PDF)</p>
-                        <button id="download-pdf" class="cyber-button pdf-button inline-block">Télécharger</button>
-                    </div>
-                </div>
-
-                <h4 class="text-2xl font-bold text-purple-900 mb-2">Prêt à devenir un expert en cybersécurité ?</h4>
-                <p class="mb-4">Notre formation complète vous attend</p>
-                <a href="Contacts.html" class="cyber-button full-course-button inline-block">Suivre la formation
-                    complète</a>
+          <div class="glass-card">
+            <div class="price-card__header">
+              <h3 class="text-2xl font-bold mb-4">Quiz Cybersécurité — Intermédiaire</h3>
+              <p class="text-gray-300">15 questions — 10 min</p>
             </div>
-        </div>
+            <p class="text-gray-200 mt-4">Questions sur réseaux, authentification et attaque courantes.</p>
+            <a class="card-cta cyber-button" href="quiz_2.html" aria-label="Commencer Quiz Intermédiaire">Commencer le quiz</a>
+          </div>
+
+          <div class="glass-card">
+            <div class="price-card__header">
+              <h3 class="text-2xl font-bold mb-4">Quiz Cybersécurité — Avancé</h3>
+              <p class="text-gray-300">20 questions — 15 min</p>
+            </div>
+            <p class="text-gray-200 mt-4">Scénarios d'attaque, sécurisation et réponses aux incidents.</p>
+            <a class="card-cta cyber-button" href="quiz_3.html" aria-label="Commencer Quiz Avancé">Commencer le quiz</a>
+          </div>
         </div>
     </section>
 
-    <!-- Loader JS - Place right before closing body tag -->
+    <!-- Footer (comme tarif.html) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4 footer-logo">NOSTROGUARD</div>
+                <p class="text-gray-400">Protection • Expertise • Innovation</p>
+                <div class="mt-8 text-sm text-gray-400">
+                    © 2025 NOSTROGUARD. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="./assets/Javascript/loader.js"></script>
-    <!-- Mobile Menu Script -->
     <script src="./assets/Javascript/mobileMenu.js"></script>
 </body>
 
